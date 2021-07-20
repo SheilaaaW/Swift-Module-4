@@ -16,6 +16,7 @@
 		1E53EF0326A6214000DFA67D /* Recipe Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53EF0226A6214000DFA67D /* Recipe Model.swift */; };
 		1E53EF0526A622B100DFA67D /* DataService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53EF0426A622B100DFA67D /* DataService.swift */; };
 		1E53EF0A26A62F4300DFA67D /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53EF0926A62F4300DFA67D /* RecipeDetailView.swift */; };
+		1E53EF0E26A7328500DFA67D /* RecipeTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53EF0D26A7328500DFA67D /* RecipeTapView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		1E53EF0226A6214000DFA67D /* Recipe Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Recipe Model.swift"; sourceTree = "<group>"; };
 		1E53EF0426A622B100DFA67D /* DataService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataService.swift; sourceTree = "<group>"; };
 		1E53EF0926A62F4300DFA67D /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
+		1E53EF0D26A7328500DFA67D /* RecipeTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTapView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +106,7 @@
 			children = (
 				1E53EEED26A61DF400DFA67D /* RecipeListView.swift */,
 				1E53EF0926A62F4300DFA67D /* RecipeDetailView.swift */,
+				1E53EF0D26A7328500DFA67D /* RecipeTapView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				1E53EF0A26A62F4300DFA67D /* RecipeDetailView.swift in Sources */,
 				1E53EF0126A6201900DFA67D /* Recipe.swift in Sources */,
 				1E53EEEE26A61DF400DFA67D /* RecipeListView.swift in Sources */,
+				1E53EF0E26A7328500DFA67D /* RecipeTapView.swift in Sources */,
 				1E53EF0326A6214000DFA67D /* Recipe Model.swift in Sources */,
 				1E53EEEC26A61DF400DFA67D /* Recipe_List_App.swift in Sources */,
 			);

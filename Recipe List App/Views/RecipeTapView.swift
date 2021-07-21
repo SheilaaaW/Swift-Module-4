@@ -12,7 +12,7 @@ struct RecipeTapView: View {
         
         TabView{
             
-            Text("Featured View")
+            RecipeFeatureView()
                 .tabItem {
                     VStack{
                         Image(systemName: "star.fill")
@@ -30,6 +30,7 @@ struct RecipeTapView: View {
                 }
             }
         }
+        .environmentObject(RecipeModel())
     }
 }
 

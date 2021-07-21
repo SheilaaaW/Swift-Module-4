@@ -17,6 +17,7 @@
 		1E53EF0A26A62F4300DFA67D /* RecipeDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53EF0926A62F4300DFA67D /* RecipeDetailView.swift */; };
 		1E53EF0E26A7328500DFA67D /* RecipeTapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53EF0D26A7328500DFA67D /* RecipeTapView.swift */; };
 		1E53EF1426A74CB900DFA67D /* recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E53EF1326A74CB900DFA67D /* recipes.json */; };
+		1E53EF1626A883BB00DFA67D /* RecipeFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E53EF1526A883BB00DFA67D /* RecipeFeatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		1E53EF0926A62F4300DFA67D /* RecipeDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeDetailView.swift; sourceTree = "<group>"; };
 		1E53EF0D26A7328500DFA67D /* RecipeTapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeTapView.swift; sourceTree = "<group>"; };
 		1E53EF1326A74CB900DFA67D /* recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = recipes.json; path = "Recipe List App/Data/recipes.json"; sourceTree = SOURCE_ROOT; };
+		1E53EF1526A883BB00DFA67D /* RecipeFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeFeatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				1E53EEED26A61DF400DFA67D /* RecipeListView.swift */,
 				1E53EF0926A62F4300DFA67D /* RecipeDetailView.swift */,
 				1E53EF0D26A7328500DFA67D /* RecipeTapView.swift */,
+				1E53EF1526A883BB00DFA67D /* RecipeFeatureView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1E53EF0526A622B100DFA67D /* DataService.swift in Sources */,
+				1E53EF1626A883BB00DFA67D /* RecipeFeatureView.swift in Sources */,
 				1E53EF0A26A62F4300DFA67D /* RecipeDetailView.swift in Sources */,
 				1E53EF0126A6201900DFA67D /* Recipe.swift in Sources */,
 				1E53EEEE26A61DF400DFA67D /* RecipeListView.swift in Sources */,

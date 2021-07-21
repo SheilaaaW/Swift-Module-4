@@ -19,7 +19,7 @@ ScrollView{
         
         Image (recipe.image)
             .resizable()
-            .frame(width: 420, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            .frame(width: 420, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
             
         
         

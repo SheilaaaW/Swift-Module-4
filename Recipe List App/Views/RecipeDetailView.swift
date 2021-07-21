@@ -12,25 +12,31 @@ struct RecipeDetailView: View {
     
     var body: some View {
         
-    ScrollView{
-        VStack(alignment:.leading){
-            Image (recipe.image)
-                .resizable(capInsets: EdgeInsets(top: 0.0, leading: 0.0, bottom: -10.0, trailing: -100.0))
-                .scaledToFit()
-                .aspectRatio(contentMode: .fill)
-                
-        Divider()
+ScrollView{
+    
+    VStack(alignment:.leading){
+        
+        
+        Image (recipe.image)
+            .resizable()
+            .frame(width: 420, height: 350, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+            
+        
+        
                 
         VStack(alignment:.leading){
         Text("Ingredients")
             .font(.headline)
             .padding(.bottom, 5)
-        ForEach (recipe.ingredients,id: \.self){ item in
-            Text(" • " + item)
+            .padding(.top, 10)
+        ForEach (recipe.ingredients){ item in
+            Text(" • " + item.name)
                 .padding(.bottom, 1.5)
         }
+        .padding(.horizontal)
             
         Divider()
+        
             
         Text ("Directions")
             .font(.headline)
@@ -38,10 +44,11 @@ struct RecipeDetailView: View {
             ForEach (0...recipe.directions.count-1, id:\.self){ index in
             
                 Text( String( index + 1) + ". " + recipe.directions[index])
-                .padding(.bottom, 1.5)
+                    .padding(.bottom, 1.5)
+            }
+            
         }
-        }
-        .padding([.leading, .trailing], 10)
+        .padding(.horizontal)
         }
     }
     .navigationBarTitle(recipe.name)

@@ -20,15 +20,24 @@ struct RecipeTapView: View {
                             .bold()
                     }
                 }
-        
-        RecipeListView()
-            .tabItem{
-                VStack{
-                    Image(systemName: "list.bullet")
-                    Text("List")
-                        .bold()
+            
+            RecipePickerView ()
+                .tabItem {
+                    VStack{
+                        Image(systemName: "hand.tap.fill")
+                        Text("My Pick")
+                            .bold()
+                    }
                 }
-            }
+            
+            RecipeListView()
+                .tabItem{
+                    VStack{
+                        Image(systemName: "list.bullet")
+                        Text("List")
+                            .bold()
+                    }
+                }
         }
         .environmentObject(RecipeModel())
     }
@@ -37,5 +46,6 @@ struct RecipeTapView: View {
 struct RecipeTapView_Previews: PreviewProvider {
     static var previews: some View {
         RecipeTapView()
+        
     }
 }

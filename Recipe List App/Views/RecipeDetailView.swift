@@ -16,14 +16,20 @@ ScrollView{
     
     VStack(alignment:.leading){
         
-        
-        Image (recipe.image)
-            .resizable()
-            .frame(width: 420, height: 300, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-            
-        
-        
+        ZStack{
+            Rectangle()
+                .foregroundColor(.blue)
                 
+            Image (recipe.image)
+                .resizable()
+                .clipped()
+                .aspectRatio(contentMode: .fill)
+            
+        }
+        .frame(width: 420, height: 400, alignment: .leading)
+            
+        Spacer()
+        
         VStack(alignment:.leading){
         Text("Ingredients")
             .font(.headline)
@@ -34,6 +40,7 @@ ScrollView{
                 .padding(.bottom, 1.5)
         }
         .padding(.horizontal)
+        
             
         Divider()
         
@@ -49,9 +56,12 @@ ScrollView{
             
         }
         .padding(.horizontal)
-        }
+        .padding(.top)
+    }
+    .padding()
     }
     .navigationBarTitle(recipe.name)
+    .padding(10)
     }
 }
 

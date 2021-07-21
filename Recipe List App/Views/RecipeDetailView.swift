@@ -18,12 +18,13 @@ ScrollView{
         
         ZStack{
             Rectangle()
-                .foregroundColor(.blue)
+                .foregroundColor(.white)
                 
             Image (recipe.image)
                 .resizable()
                 .clipped()
                 .aspectRatio(contentMode: .fill)
+                .padding(.bottom)
             
         }
         .frame(width: 420, height: 400, alignment: .leading)

@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct RecipeTapView: View {
+    
+    
     var body: some View {
         
         TabView{
@@ -20,13 +22,13 @@ struct RecipeTapView: View {
                             .bold()
                     }
                 }
+            let model = RecipeModel()
             
-            RecipePickerView ()
+            RecipePickerView (recipe: model.recipes[0])
                 .tabItem {
                     VStack{
                         Image(systemName: "hand.tap.fill")
                         Text("My Pick")
-                            .bold()
                     }
                 }
             

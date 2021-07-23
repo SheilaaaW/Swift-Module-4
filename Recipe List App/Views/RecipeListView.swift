@@ -20,8 +20,8 @@ struct RecipeListView: View {
                     .bold()
                     .padding(.leading)
                     .padding(.top, 40)
-                    .font(.largeTitle)
-            
+                    .font(Font.custom("Chalkboard SE Bold", size: 35))
+                
                 ScrollView{
                     LazyVStack (alignment:.leading) {
                         ForEach(model.recipes){ r in
@@ -34,23 +34,33 @@ struct RecipeListView: View {
                                         Image(r.image)
                                             .resizable()
                                             .scaledToFill()
-                                            .frame(width: 50, height: 50, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
+                                            .frame(width: 50, height: 50, alignment: .center)
                                             .clipped()
                                             .cornerRadius(5.0)
                                         
-                                        Text(r.name)
-                                            .foregroundColor(.black)
+                                        VStack (alignment: .leading){
+                                            Text(r.name)
+                                               
+                                                .foregroundColor(.black)
+                                                
+                                            RecipeHighlights(highlights: r.highlights)
+                                                .foregroundColor(.gray)
+                                                .font(Font.custom("Chalkboard SE Regular", size: 16))
+                                        }
+                                        
                                         
                                     }
                                 })
                         }
                         .navigationBarTitle("Sheila's Recipe")
                         .navigationBarHidden(true)
-
+                        
+                            .font(Font.custom("Chalkboard SE Regular", size: 20))
+                        
                     }
                     .padding()
                 }
-           
+                
             }
             
         }

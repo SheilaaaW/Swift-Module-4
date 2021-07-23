@@ -33,10 +33,12 @@ ScrollView{
         Text(recipe.name)
             .bold()
             .padding(.leading)
-            .font(.largeTitle)
+            .padding(.bottom)
+            .font(Font.custom("Chalkboard SE Bold", size: 35))
         
         VStack(alignment:.leading){
             Text("Select your serving size: ")
+                .font(Font.custom("Chalkboard SE Regular", size: 20))
             
             Picker("", selection: $selectedServingSize){
                 Text("2").tag(2)
@@ -45,19 +47,22 @@ ScrollView{
                 Text("8").tag(8)
             }
             .pickerStyle(SegmentedPickerStyle())
-            .frame(width:200)
+            .frame(width:230)
+            .font(Font.custom("Chalkboard SE Regular", size: 16))
         }
-        .padding()
+        .padding(.horizontal)
         
         
         VStack(alignment:.leading){
         Text("Ingredients")
-            .font(.headline)
+            .font(Font.custom("Chalkboard SE Regular", size: 20))
             .padding(.bottom, 5)
-            .padding(.top, 10)
+            
         ForEach (recipe.ingredients){ item in
             Text(" • " + RecipeModel.getPortion(ingredient: item, recipeServings: recipe.servings, targetServings: selectedServingSize) + " " + item.name.lowercased())
                 .padding(.bottom, 1.5)
+                .font(Font.custom("Chalkboard SE Regular", size: 16))
+            
         }
         .padding(.horizontal)
         
@@ -66,12 +71,13 @@ ScrollView{
         
             
         Text ("Directions")
-            .font(.headline)
+            .font(Font.custom("Chalkboard SE Regular", size: 20))
             .padding(.bottom,5)
             ForEach (0...recipe.directions.count-1, id:\.self){ index in
             
                 Text( String( index + 1) + ". " + recipe.directions[index])
                     .padding(.bottom, 1.5)
+                    .font(Font.custom("Chalkboard SE Regular", size: 16))
             }
             
         }

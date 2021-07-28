@@ -36,7 +36,17 @@ struct RecipeTapView: View {
                 .tabItem{
                     VStack{
                         Image(systemName: "list.bullet")
-                        Text("List")
+                        Text("Recipe List")
+                            .bold()
+                    }
+                }
+            
+            
+            RecipeWebsiteView(url: URL(string:"https://www.serendipitysweets.shop/shop")!)
+                .tabItem{
+                    VStack{
+                        Image(systemName: "cart")
+                        Text("Shop")
                             .bold()
                     }
                 }

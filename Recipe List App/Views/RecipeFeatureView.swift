@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import WebKit
 
 struct RecipeFeatureView: View {
     
@@ -22,6 +23,8 @@ struct RecipeFeatureView: View {
                 .padding(.leading)
                 .padding(.top, 40)
                 .font(Font.custom("Chalkboard SE Bold", size: 35))
+            
+            
             
             GeometryReader { geo in
                 

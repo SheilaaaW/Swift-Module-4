@@ -16,66 +16,80 @@ struct RecipePickerView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 10){
-            Text("My Pick")
-                .bold()
-                .font(Font.custom("Chalkboard SE Bold", size: 35))
+        NavigationView {
+            VStack(alignment: .leading, spacing: 10){
+                HStack {
+                    Text("Delivery/Pick up")
+                        .font(Font.custom("Chalkboard SE Regular", size: 24))
+                        .navigationTitle("~ My Pick ~")
+                                   
+                    Spacer ()
+                        NavigationLink (
+                            destination: RecipeMapView()
+                            ,
+                            label: {
+                                Text("View Map")
+                                    .font(Font.custom("Chalkboard SE Regular", size: 16
+                                    ))
+                                    .foregroundColor(.gray)
+                                    .padding(.top)
+                            })
+                    
+                }
+                
+                Picker ("Tap Me", selection: $selectedMethod){
+                    Text("Delivery").tag(0)
+                    Text("Pick up").tag(1)
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .font(Font.custom("Chalkboard SE Regular", size: 18))
+                
+                Divider()
+                
+                
+                HStack {
+                    Text("Offerings")
+                        .font(Font.custom("Chalkboard SE Regular", size: 24))
+                    
+                    Spacer()
+                    
+                    Image(systemName: "hand.tap.fill")
+                        .padding(.top)
+                    
+                    Button("Pick for Me"){
+                                  selectedIndex = .random(in: 1..<model.recipes.count)
+                           }
+                    .foregroundColor(.gray)
+                    .font(Font.custom("Chalkboard SE Regular", size: 20))
+                    .padding(.top)
+                    }
             
-            Text("Delivery/Pick up")
-                .font(Font.custom("Chalkboard SE Regular", size: 24))
-            
-            Picker ("Tap Me", selection: $selectedMethod){
-                Text("Delivery").tag(0)
-                Text("Pick up").tag(1)
-            }
-            .pickerStyle(SegmentedPickerStyle())
-            .font(Font.custom("Chalkboard SE Regular", size: 18))
-            
-            Divider()
-            
-            
-            HStack {
-                Text("Offerings")
+                
+                Picker ("Tap Me", selection: $selectedIndex) {
+                                ForEach (0..<model.recipes.count){ index in
+                                    
+                                    Text("\(model.recipes[index].name)").tag(index)
+                                        .font(Font.custom("Chalkboard SE Regular", size: 18))
+                                }
+                            }
+                
+                Text("My Pick = \(model.recipes[selectedIndex].name)")
+                    
                     .font(Font.custom("Chalkboard SE Regular", size: 24))
                 
-                Spacer()
-                
-                Image(systemName: "hand.tap.fill")
-                    .padding(.top)
-                
-                Button("Pick for Me"){
-                              selectedIndex = .random(in: 1..<model.recipes.count)
-                       }
-                .foregroundColor(.gray)
-                .font(Font.custom("Chalkboard SE Regular", size: 20))
-                .padding(.top)
-                }
-        
-            
-            Picker ("Tap Me", selection: $selectedIndex) {
-                            ForEach (0..<model.recipes.count){ index in
-                                
-                                Text("\(model.recipes[index].name)").tag(index)
-                                    .font(Font.custom("Chalkboard SE Regular", size: 18))
-                            }
-                        }
-            
-            Text("My Pick = \(model.recipes[selectedIndex].name)")
-                
-                .font(Font.custom("Chalkboard SE Regular", size: 24))
-            
-                TabView {
-                            Image(model.recipes[selectedIndex].image)
-                                .resizable()
-                                .clipped()
-                                .aspectRatio(contentMode: .fill)
-                                .padding(.bottom, 10)
-                    .frame(alignment: .bottomLeading)
-                }
-                .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
-            
+                    TabView {
+                                Image(model.recipes[selectedIndex].image)
+                                    .resizable()
+                                    .clipped()
+                                    .aspectRatio(contentMode: .fill)
+                                    .padding(.bottom, 10)
+                        .frame(alignment: .bottomLeading)
                     }
-        .padding(.horizontal)
+                    .tabViewStyle(PageTabViewStyle(indexDisplayMode: .automatic))
+                
+                        }
+            .padding(.horizontal)
+        }
         
     }
 }
